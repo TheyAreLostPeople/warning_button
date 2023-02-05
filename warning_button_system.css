@@ -1,0 +1,27 @@
+/* design */
+.warning_barrier {
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.warning_message {
+  background-color:white;
+  display: flex;
+  flex-direction: column;
+  border: black solid 2px;
+  padding: 4px;
+}
+/* functional */
+.warning_barrier:active {/* make buttons from barrier's and message's content clickable. Naturally, if these buttons have no type and are inside an form or associated with an other form (form="form_id"), they will use the action of the form of button.warned */
+  visibility: visible;
+}
+button.warned:focus-within + .warning_barrier {/* stop the step to release button.warned listener. If a button from barrier's or message's content have a type="button" is typed, that cancel the listener of button.warned and close the barrier. It also cancel the button.warned listener and close the barrier when other barrier's or message's content or barrier background are clicked. In addition, enter key valid the button.warned listener */
+  visibility: visible;
+}

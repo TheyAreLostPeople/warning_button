@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="warning_button_system.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Warning test</title>
+  </head>
+
+  <body>
+
+    <h1> Exemple of uses </h1>
+    <!-- with external form method, declare form like here -->
+    <form id="google" action="https://www.google.com"></form>
+
+    <!-- follow the tree and attribute declaration for each method ! -->
+    <form action="https://www.google.com">
+      <button class="warned">google with intern form</button>
+      <div class="warning_barrier">
+        <div class="warning_message">
+          Would you like to visit Google ?
+          <button>Yes</button>
+          <button type="button">No</button>
+          <button formaction="warning_button_system.css">See the style</button>
+        </div>
+      </div>
+    </form>
+
+    <button class="warned" form="google">google with extern form</button>
+    <div class="warning_barrier">
+      <div class="warning_message">
+        Are you sure you want to visit Google ?
+        <button form="google">Sure !</button>
+        <button type="button">I'm not sure</button>
+        <button form="google" formaction="warning_button_system.css">See the style</button>
+      </div>
+    </div>
+
+    <button class="warned" onclick="window.location.href='https://www.google.com';">google with onclick</button>
+    <div class="warning_barrier">
+      <div class="warning_message">
+        You will be redirected to Google.
+        <button onclick="window.location.href='https://www.google.com';">Continue</button>
+        <button type="button">Cancel</button>
+        <button onclick="window.location.href='warning_button_system.css';">See the style</button>
+      </div>
+    </div>
+
+    <button type="button" class="warned">See keyboard uses</button>
+    <div class="warning_barrier">
+      <div class="warning_message">
+        Keyboard uses :
+        <ul>
+          <li>Enter to valid the paused/stoped state of the listener of the warned button</li>
+          <li>Space to call a brand new instance of the listener of the warned button
+            <br>(that mean that it can be skiped/canceled with tab before space is released)
+          </li>
+          <li>Escape to see what warned button is selected</li>
+          <li>Tab to close the message and skip/cancel the listener</li>
+        </ul>
+      </div>
+    </div>
+
+  </body>
+
+</html>
