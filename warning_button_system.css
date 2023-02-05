@@ -19,9 +19,9 @@
   padding: 4px;
 }
 /* functional */
-.warning_barrier:active {/* make buttons from barrier's and message's content clickable. Naturally, if these buttons have no type and are inside an form or associated with an other form (form="form_id"), they will use the action of the form of button.warned */
+.warning_barrier:active {/* make buttons from content of the barrier and button from content of the message clickable. Naturally, if these buttons have no type and are inside an form or associated with an other form (form="form_id"), they will use the action of the form */
   visibility: visible;
 }
-button.warned:focus-within + .warning_barrier {/* stop the step to release button.warned listener. If a button from barrier's or message's content have a type="button" is typed, that cancel the listener of button.warned and close the barrier. It also cancel the button.warned listener and close the barrier when other barrier's or message's content or barrier background are clicked. In addition, enter key valid the button.warned listener */
+button.warned:focus-within + .warning_barrier {/* pause the listener status of the button.warned. If a button from content of the barrier or from content of the message have a type="button" and are typed, that cancel the listener of button.warned and close the barrier. It also cancel the listener of the button.warned and close the barrier when other content of the barrier or content of the message or the barrier background are clicked. In addition, enter key valid the listener of the button.warned */
   visibility: visible;
 }
